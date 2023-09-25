@@ -1,12 +1,9 @@
-var shuffle = function(nums, n) {
-    let result = [];
-    let i=0;
-    let j=n;
-    while(j<2*n){
-        result.push(nums[i]);
-        result.push(nums[j]);
-        i++;
-        j++;
-    }
-    return result;
-};
+function shuffle(nums:number[], n:number):number[] {
+    let result:number[] = [];
+for(let i=0;i<n;i++){
+result.push(nums[i])
+result.push(nums[n+i])
+
+}
+return result
+}
