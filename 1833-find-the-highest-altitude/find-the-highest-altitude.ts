@@ -1,9 +1,9 @@
-function largestAltitude(gain: number[]): number {
- let currentgain=0
- let maxgain=0
- for(let i=0;i<gain.length;i++){
-     currentgain+=gain[i]
-     maxgain=Math.max(currentgain,maxgain)
+function largestAltitude(ga: number[]): number {
+ let c=0
+ let m=0
+ for(let i=0;i<ga.length;i++){
+     c+=ga[i]
+     m=Math.max(c,m)
  }
- return maxgain
+ return m
 };
