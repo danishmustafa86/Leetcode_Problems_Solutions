@@ -1,12 +1,14 @@
 function addToArrayForm(num: number[], k: number) {
+    let i = num.length - 1;
     let list: number[] = [];
-    for (let i = num.length - 1; i >= 0 || k > 0; i--) {
+    while (i >= 0 || k > 0) {
         if (i >= 0) {
             list.unshift((num[i] + k) % 10);
             k = Math.floor((num[i] + k) / 10);
+            i--;
         } else {
             list.unshift(k % 10);
-            k = Math.floor(k / 10); // Use integer division here
+            k = Math.floor(k / 10);
         }
     }
     return list;
