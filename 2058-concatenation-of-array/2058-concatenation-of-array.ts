@@ -1,4 +1,3 @@
-function getConcatenation(nums: number[]) {
-let ans=nums.concat(nums)
-return ans 
+function getConcatenation(nums: number[]): number[] {
+    return nums.concat(nums);
 };
