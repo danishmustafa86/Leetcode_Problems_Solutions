@@ -9,4 +9,4 @@ for (let i=0;i<nums.length;i++){
 }
 return array
 };
-console.log(twoSum([3,3],6));
+// console.log(twoSum([3,3],6));
