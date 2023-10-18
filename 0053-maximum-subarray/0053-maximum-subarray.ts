@@ -12,4 +12,3 @@ if (minsum<0) {
     }
     return maxarray
 };
-console.log(maxSubArray([3,9,-8,3,-2,-9,3,3,7]));
