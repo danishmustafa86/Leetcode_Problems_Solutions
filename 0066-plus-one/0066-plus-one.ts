@@ -1,37 +1,19 @@
-// function plusOne(digits: number[]): number[] {
-//     let numarray: number[] = [];
-//     let num1: string = "";
-//     let str: string = "";
-    
-//     for (let i = 0; i < digits.length; i++) {
-//         let e = digits[i];
-//         num1 = e.toString();
-//         str = str.concat(num1);
-//     }
-    
-//     let num2: number = parseInt(str);
-//     num2 = num2 + 1;
-    
-//     const numbsAsString: string = num2.toString();
-    
-//     for (let j = 0; j < numbsAsString.length; j++) {
-//         const e = parseInt(numbsAsString[j], 10); // Add the radix argument
-//         numarray.push(e);
-//     }
-
-//     return numarray;
-// }
-
-// console.log(plusOne([1, 2, 3, 4]));
-
 function plusOne(digits: number[]): number[] {
-    for (let i = digits.length - 1; i >= 0; i--) {
-        if (digits[i] === 9) {
-            digits[i] = 0;
-        } else {
-            digits[i]++;
-            return digits;
-        }
+    const n = digits.length;
+    let carry = 1; // Initialize carry to 1 to add 1 to the least significant digit.
+
+    for (let i = n - 1; i >= 0; i--) {
+        const sum = digits[i] + carry;
+        digits[i] = sum % 10; // Update the current digit.
+        carry = Math.floor(sum / 10); // Calculate carry for the next iteration.
     }
-    return [1, ...digits];
-};
+
+    // If there is a carry after the loop, add a new most significant digit.
+    if (carry > 0) {
+        digits.unshift(carry);
+    }
+
+    return digits;
+}
+
+console.log(plusOne([2, 3, 56, 4, 1, 5, 4, 0, 8, 0, 0, 7, 3, 1, 5, 6, 0, 0]));
