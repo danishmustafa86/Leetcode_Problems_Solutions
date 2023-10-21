@@ -13,5 +13,4 @@ function maximumWealth(accounts: number[][]): number {
     return maxWealth;
 }
 
-// .log(maximumWealth());
 
