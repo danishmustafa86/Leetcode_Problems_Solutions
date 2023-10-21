@@ -1,8 +1,8 @@
 function removeDuplicates(nums: number[]): number {
   // Check if the input array is empty
-  if (nums.length === 0) {
-    return 0; // If the array is empty, there are no duplicates to remove, so return 0.
-  }
+//   if (nums.length === 0) {
+//     return 0; // If the array is empty, there are no duplicates to remove, so return 0.
+//   }
 
   // Initialize a pointer to keep track of the position where the next unique element should be placed.
   let authIndex = 1;
