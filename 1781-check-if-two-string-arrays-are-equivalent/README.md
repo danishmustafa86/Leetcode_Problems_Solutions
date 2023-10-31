@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent">1781. Check If Two String Arrays are Equivalent</a></h2><h3>Easy</h3><hr><p>Given two string arrays <code>word1</code> and <code>word2</code>, return<em> </em><code>true</code><em> if the two arrays <strong>represent</strong> the same string, and </em><code>false</code><em> otherwise.</em></p>
+<h2><a href="https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent">Check If Two String Arrays are Equivalent</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given two string arrays <code>word1</code> and <code>word2</code>, return<em> </em><code>true</code><em> if the two arrays <strong>represent</strong> the same string, and </em><code>false</code><em> otherwise.</em></p>
 
 <p>A string is <strong>represented</strong> by an array if the array elements concatenated <strong>in order</strong> forms the string.</p>
 
