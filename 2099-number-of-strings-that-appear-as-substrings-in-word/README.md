@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/number-of-strings-that-appear-as-substrings-in-word">2099. Number of Strings That Appear as Substrings in Word</a></h2><h3>Easy</h3><hr><p>Given an array of strings <code>patterns</code> and a string <code>word</code>, return <em>the <strong>number</strong> of strings in </em><code>patterns</code><em> that exist as a <strong>substring</strong> in </em><code>word</code>.</p>
+<h2><a href="https://leetcode.com/problems/number-of-strings-that-appear-as-substrings-in-word">Number of Strings That Appear as Substrings in Word</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>Given an array of strings <code>patterns</code> and a string <code>word</code>, return <em>the <strong>number</strong> of strings in </em><code>patterns</code><em> that exist as a <strong>substring</strong> in </em><code>word</code>.</p>
 
 <p>A <strong>substring</strong> is a contiguous sequence of characters within a string.</p>
 
