@@ -1,3 +1,4 @@
+"use strict";
 // Input: s = "codeleet", indices = [4,5,6,7,0,2,1,3]
 // Output: "leetcode"
 // function restoreString(s: string, indices: number[]): string {
@@ -21,14 +22,14 @@
 // }
 // console.log(restoreString("codeleet", [4, 5, 6, 7, 0, 2, 1, 3]));
 function restoreString(s, indices) {
-    var shuffled = [];
-    for (var i = 0; i < s.length; i++) {
+    const shuffled = [];
+    for (let i = 0; i < s.length; i++) {
         shuffled[indices[i]] = s[i];
     }
     return shuffled.join("");
 }
 console.log(restoreString("codeleet", [4, 5, 6, 7, 0, 2, 1, 3])); // Output: "leetcode"
-console.log(restoreString("abc", [0, 1, 2])); // Output: "abc"
-var fruits = ["apple", "banana", "cherry"];
-var joinedString = fruits.join(); // Join elements with a comma and a space
+console.log(restoreString("abc", [0, 1, 2])); // Output: "abc "
+const fruits = ["apple", "banana", "cherry"];
+const joinedString = fruits.join(); // Join elements with a comma and a space
 console.log(joinedString);
