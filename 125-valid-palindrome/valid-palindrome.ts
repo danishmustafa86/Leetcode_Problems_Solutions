@@ -5,10 +5,8 @@ function isPalindrome(s: string): boolean {
             str += s[i]
         }
     }
-    console.log(str);
     str = str.toLocaleLowerCase()
     let reversedStr: string = str.split("").reverse().join("");
-    console.log(reversedStr);
     if (reversedStr === str) {
         return true;
     } else {
