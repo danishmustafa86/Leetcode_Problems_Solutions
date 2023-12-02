@@ -72,7 +72,7 @@ function reversePrefix(word: string, ch: string): string {
    else {
         return word
     } 
-    return st + word.slice(num + 1) || word;
+    return st + word.slice(num + 1)
 }
 
 // Test
