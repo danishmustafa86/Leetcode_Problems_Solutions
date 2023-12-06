@@ -20,7 +20,7 @@ function isValid(s: string): boolean {
             const lastOpenedBracket = stack.pop();
 
             // Check if there is a corresponding opening bracket
-            if (!lastOpenedBracket || openingBrackets.indexOf(lastOpenedBracket) !== closingBrackets.indexOf(currentBracket)) {
+            if ( openingBrackets.indexOf(lastOpenedBracket) !== closingBrackets.indexOf(currentBracket)) {
                 // If not, return false (invalid)
                 return false;
             }
