@@ -30,8 +30,3 @@ function isValid(s: string): boolean {
     // After the loop, check if there are any unmatched opening brackets left in the stack
     return stack.length === 0;
 }
-
-// Test cases
-console.log(isValid("()"));        // Output: true
-console.log(isValid("()[]{}"));    // Output: true
-console.log(isValid("(]"));         // Output: false
