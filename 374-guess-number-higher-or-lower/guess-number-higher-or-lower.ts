@@ -11,7 +11,7 @@ function guessNumber(n: number): number {
     let s = 1;
     let e = n;
     while (s <= e) {
-        let m = Math.floor((s + e) / 2);
+        let m=Math.floor(s+(e-s)/2)
         if (guess(m) == -1) {
             e = m - 1;
         } else if (guess(m) == 1) {
