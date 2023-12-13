@@ -6,12 +6,5 @@ function intersection(nums1: number[], nums2: number[]): number[] {
             }
         
     }
-    // for (let j = 0; j < arr.length; j++) {
-    //     for (let k = j+1; k < arr.length; k++) {
-    //         if ( arr[j] === arr[k]) { 
-    //             arr.splice(k,1, )
-    //     }
-    // }
-    // }
-    return arr
+   return arr
 };
