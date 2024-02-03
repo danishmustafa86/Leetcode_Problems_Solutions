@@ -1,34 +1,33 @@
-function removeDuplicates(s: string): string {
-    let us:string[]=s.split('');
-    let i=0;
-    while(i < us.length - 1) {
-        if (us[i] === us[i + 1]) {
-            us.splice(i, 2);
-            i = 0;
-        } else {
-            i++;
-        }
-    }
-    return us.join('');
-}
+// function removeDuplicates(s: string): string {
+//     let us:string[]=s.split('');
+//     let i=0;
+//     while(i < us.length - 1) {
+//         if (us[i] === us[i + 1]) {
+//             us.splice(i, 2);
+//             i = 0;
+//         } else {
+//             i++;
+//         }
+//     }
+//     return us.join('');
+// }
 
 // // Example usage:
 // console.log(removeDuplicates("abbaca")); // Output: "ca"
 // console.log(removeDuplicates("azxxzy")); // Output: "ay"
-// function removeDuplicates(s: string): string {
-//     let us:string[]=s.split('')
-//     let i=0
-//     while(i<us.length){
-//         if(us[i] === us[i + 1]){
-//             us.splice(i,2)
-//             i=0
-//         }
-//         else{
-//             i++
-//         }
-//     }
-//     return us.join('')
-// }
+function removeDuplicates(s: string): string {
+    let us:string[]=s.split('')
+    let i=0
+    while(i<us.length-1){
+        if(us[i] === us[i + 1]){
+            us.splice(i,2)
+            i=0
+        }       else{
+            i++
+        }
+    }
+    return us.join('')
+}
    
    
    
