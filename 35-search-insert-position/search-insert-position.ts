@@ -22,7 +22,7 @@ function searchInsert(nums: number[], target: number): number {
         if (nums[i] === target) {
             k = i;
             break; // Found the target, no need to continue
-        } else if (target > nums[i] && target < nums[i + 1]) {
+        } else if (target > nums[i] && (i === nums.length - 1 || target < nums[i + 1])) {
             k = i + 1; // Insertion point found
             break; // No need to continue, insertion point found
         } 
