@@ -26,10 +26,10 @@ function searchInsert(nums: number[], target: number): number {
             k = i + 1; // Insertion point found
             break; // No need to continue, insertion point found
         } 
-        // else if (target > nums[nums.length - 1]) {
-        //     k = nums.length; // Insert at the end of the array
-        //     break; // No need to continue, insertion point found
-        // } 
+        else if (target > nums[nums.length - 1]) {
+            k = nums.length; // Insert at the end of the array
+            break; // No need to continue, insertion point found
+        } 
         else {
             k = 0; // Insert at the beginning of the array
         }
