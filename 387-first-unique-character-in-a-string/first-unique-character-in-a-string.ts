@@ -18,31 +18,38 @@
     
 //     return n
 // };
+
+
+// function firstUniqChar(s: string): number {
+//     let ns: string[] = s.split('');
+    //     // Iterate through the string to find the first non-repeating character
+//     for (let i = 0; i < ns.length; i++) {
+//         let isUnique = true;
+//         for (let j = 0; j < ns.length; j++) {
+//             if (i !== j && ns[i] === ns[j]) {
+//                 // If a duplicate character is found, mark it as not unique
+//                 isUnique = false;
+//                 break;
+//             }//         }
+//         // If the current character is unique, return its index
+//         if (isUnique) {
+//             return i;//         }
+//     }
+    //     // If no unique character is found, return -1
+//     return -1;
+// }
 function firstUniqChar(s: string): number {
     let ns: string[] = s.split('');
-    
-    // Iterate through the string to find the first non-repeating character
-    for (let i = 0; i < ns.length; i++) {
-        let isUnique = true;
-        for (let j = 0; j < ns.length; j++) {
-            if (i !== j && ns[i] === ns[j]) {
-                // If a duplicate character is found, mark it as not unique
-                isUnique = false;
+    for(let i=0;i<ns.length;i++){
+        let unique=true
+        for(let j=0;j<ns.length;j++){
+            if(i!==j && ns[i]===ns[j]){
+                unique=false
                 break;
-            }
-        }
-        // If the current character is unique, return its index
-        if (isUnique) {
-            return i;
+            }        }
+        if(unique){
+            return i
         }
     }
-    
-    // If no unique character is found, return -1
-    return -1;
+    return -1
 }
-
-// Test cases
-console.log(firstUniqChar("leetcode")); // Output: 0
-console.log(firstUniqChar("loveleetcode")); // Output: 2
-console.log(firstUniqChar("aabb")); // Output: -1
-console.log(firstUniqChar("aadadaad")); // Output: -1
