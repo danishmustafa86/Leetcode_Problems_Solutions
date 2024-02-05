@@ -39,11 +39,10 @@
 //     return -1;
 // }
 function firstUniqChar(s: string): number {
-    let ns: string[] = s.split('');
-    for(let i=0;i<ns.length;i++){
+    for(let i=0;i<s.length;i++){
         let unique=true
-        for(let j=0;j<ns.length;j++){
-            if(i!==j && ns[i]===ns[j]){
+        for(let j=0;j<s.length;j++){
+            if(i!==j && s[i]===s[j]){
                 unique=false
                 break;
             }        }
