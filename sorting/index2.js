@@ -6,9 +6,8 @@
 // Example 2:
 // Input: nums = [2,2,1,1,1,2,2]
 // Output: 2
-
-function majorityElement(nums: number[]): number {
-    return nums.sort()[Math.floor(nums.length / 2)]
-};
-
-console.log([2,2,1,1,1,2,2]);
+function majorityElement(nums) {
+    return nums.sort()[Math.floor(nums.length / 2)];
+}
+;
+console.log([2, 2, 1, 1, 1, 2, 2]);
