@@ -10,9 +10,9 @@ for (let i = 0; i < command.length; i++) {
     else if (command[i]=="(" && command[i+3]==")") {
         str=str.concat("al")
     }
-    else{
-        str=str.concat("")
-    }
+    // else{
+    //     str=str.concat("")
+    // }
 }
 return str
 };
