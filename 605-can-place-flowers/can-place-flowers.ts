@@ -17,7 +17,8 @@ function canPlaceFlowers(flowerbed: number[], n: number): boolean {
     for(let i = 1; i < flowerbed.length - 1; i++) {
         if(flowerbed[i - 1] === 0 && flowerbed[i] === 0 && flowerbed[i + 1] === 0) {
             n--;
-            flowerbed[i] = 1; // Corrected line
+            // flowerbed[i] = 1; // Corrected line
+            i=i+1
         }
     }
     return n <= 0;
