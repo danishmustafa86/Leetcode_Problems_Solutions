@@ -1,12 +1,17 @@
 class Solution:
-    def jump(self, nums: List[int]) -> int:
-        lf,rt=0,0
-        res=0
-        while lf < (len(nums)-1):
-            maxres=0
-            for i in range(rt,lf+1):
-                maxres=max(maxres,i+nums[i])
-            rt=lf+1
-            lf=maxres
-            res+=1
-        return res
+    def jump(self, nums: List[int]) -> bool:
+        if len(nums) == 1:
+            return 0
+
+        farthest = end = jump = 0
+        for i, j in enumerate(nums):
+            farthest = max(farthest, i+j)
+            
+            if farthest >= len(nums)-1:
+                jump += 1
+                break
+
+            if i == end:
+                jump += 1
+                end = farthest
+        return jump
