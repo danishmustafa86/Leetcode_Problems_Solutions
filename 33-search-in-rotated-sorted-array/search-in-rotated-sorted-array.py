@@ -4,4 +4,5 @@ class Solution:
         for i in range(len(nums)):
             if target == nums[i]:
                 index = i
+                break
         return index
