@@ -6,6 +6,6 @@ class Solution:
         for i in range(len(s)):
             if words[i][0] == s[i]:
                 length += 1
-                if length == len(s):
+                if length == len(words):
                     return True
         return False
