@@ -6,8 +6,8 @@
 
 class Solution:
     def nodesBetweenCriticalPoints(self, head: Optional[ListNode]) -> List[int]:
-        if not head or not head.next or not head.next.next:
-            return [-1, -1]
+        # if not head or not head.next or not head.next.next:
+        #     return [-1, -1]
         
         arr1 = []
         var = 1
