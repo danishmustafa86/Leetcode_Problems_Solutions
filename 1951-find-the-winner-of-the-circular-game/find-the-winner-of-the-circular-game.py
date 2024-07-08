@@ -11,6 +11,4 @@ class Solution:
             j = j % len(arr)
             arr.remove(arr[j]) 
 
-
-        winner = arr[0]
-        return winner
+        return arr[0]
