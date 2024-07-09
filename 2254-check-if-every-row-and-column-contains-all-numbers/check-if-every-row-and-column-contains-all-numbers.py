@@ -1,16 +1,21 @@
-from typing import List
-
 class Solution:
     def checkValid(self, matrix: List[List[int]]) -> bool:
         n = len(matrix)
+
+        # Initialize counters for rows and columns
         for i in range(n):
-            row_set = set()
-            col_set = set()
+            row_counts = [0] * n
+            col_counts = [0] * n
+
             for j in range(n):
-                if matrix[i][j] in row_set or matrix[j][i] in col_set:
+                # Check for duplicates in rows
+                if row_counts[matrix[i][j] - 1] != 0:
                     return False
-                row_set.add(matrix[i][j])
-                col_set.add(matrix[j][i])
-        if row_set != set(range(1,n+1)) or col_set != set(range(1,n+1)):
-            return False
+                row_counts[matrix[i][j] - 1] += 1
+
+                # Check for duplicates in columns
+                if col_counts[matrix[j][i] - 1] != 0:
+                    return False
+                col_counts[matrix[j][i] - 1] += 1
+
         return True
