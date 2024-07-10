@@ -11,8 +11,8 @@ class Solution:
                     var += 0
                 else:
                     var += 1
-        if var < 0:
-            return 0
+        # if var < 0:
+        #     return 0
         return var
 
 
