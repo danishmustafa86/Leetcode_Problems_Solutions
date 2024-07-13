@@ -2,34 +2,44 @@ from typing import List
 
 class Solution:
     def survivedRobotsHealths(self, positions: List[int], healths: List[int], directions: str) -> List[int]:
+        n = len(positions)
+        
         # Create a list of tuples with (position, health, direction, original_index)
-        robots = [(positions[i], healths[i], directions[i], i) for i in range(len(positions))]
+        robots = [(positions[i], healths[i], directions[i], i) for i in range(n)]
         
         # Sort robots based on their positions
         robots.sort()
         
-        stack = []
-        
-        for pos, health, direction, index in robots:
-            if direction == 'R':
-                stack.append((pos, health, direction, index))
+        i = 0
+        while i < len(robots) - 1:
+            if robots[i][2] == 'R' and robots[i + 1][2] == 'L':
+                if robots[i][1] == robots[i + 1][1]:
+                    # Both robots have the same health, remove both
+                    robots.pop(i)
+                    robots.pop(i)  # After popping i once, the next robot shifts left
+                    i = max(i - 1, 0)  # Adjust index after removal
+                elif robots[i][1] > robots[i + 1][1]:
+                    # Robot i survives, robot i+1 loses 1 health
+                    robots[i] = (robots[i][0], robots[i][1] - 1, 'R', robots[i][3])
+                    robots.pop(i + 1)
+                else:
+                    # Robot i+1 survives, robot i loses 1 health
+                    robots[i + 1] = (robots[i + 1][0], robots[i + 1][1] - 1, 'L', robots[i + 1][3])
+                    robots.pop(i)
+                # Reset i to check the previous pair again
+                i = max(i - 1, 0)
             else:
-                while stack and stack[-1][2] == 'R' and stack[-1][1] < health:
-                    _, r_health, _, _ = stack.pop()
-                    health -= 1
-                if stack and stack[-1][2] == 'R':
-                    if stack[-1][1] == health:
-                        stack.pop()
-                        health = 0
-                    else:
-                        stack[-1] = (stack[-1][0], stack[-1][1] - 1, stack[-1][2], stack[-1][3])
-                        health = 0
-                if health > 0:
-                    stack.append((pos, health, direction, index))
+                i += 1
         
-        # Extract the surviving robots and their health in the original order
-        surviving_healths = sorted([(idx, health) for _, health, _, idx in stack])
-        return [health for idx, health in surviving_healths]
+        # Extract the surviving healths in the original order
+        surviving_healths = [0] * n
+        for pos, health, _, original_index in robots:
+            surviving_healths[original_index] = health
+        
+        # Remove zeros (robots that did not survive)
+        surviving_healths = [health for health in surviving_healths if health > 0]
+        
+        return surviving_healths
 
 # Example usage
 solution = Solution()
