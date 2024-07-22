@@ -8,13 +8,14 @@ class Solution:
         for right in range(len(s)):
             char_count[s[right]] += 1
             
-            while any(count > 2 for count in char_count.values()):
+            # If any character occurs more than twice, adjust the window
+            while char_count[s[right]] > 2:
                 char_count[s[left]] -= 1
                 if char_count[s[left]] == 0:
                     del char_count[s[left]]
                 left += 1
             
+            # Update the maximum length
             max_length = max(max_length, right - left + 1)
 
         return max_length
-
