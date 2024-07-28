@@ -28,7 +28,6 @@ class Solution:
     def frequencySort(self, s: str) -> str:
         s = list(s)
         s.sort()
-        # s.reverse()
         hsh = {}
         arr = []
         for i in s:
@@ -37,19 +36,10 @@ class Solution:
             else:
                 hsh[i] = 1
 
-        # Correcting the loop and usage of the while loop to append characters
-        shsh = {k: hsh[k] for k in sorted(hsh, key = hsh.get, reverse = True)}
+        # Sorting the dictionary based on frequency in descending order
+        shsh = {k: hsh[k] for k in sorted(hsh, key=hsh.get, reverse=True)}
         
-        for v in shsh:
-            count = shsh[v]
-            while count > 0:
-                arr.append(v)
-                count -= 1
+        for k, v in shsh.items():
+            arr.append(k * v)
 
         return "".join(arr)
-
-# Example usage
-solution = Solution()
-print(solution.frequencySort("tree"))  # Output: "eert"
-print(solution.frequencySort("cccaaa"))  # Output: "aaaccc" or "cccaaa"
-print(solution.frequencySort("Aabb"))  # Output: "bbAa" or "Aabb"
