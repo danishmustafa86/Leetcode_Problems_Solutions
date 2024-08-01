@@ -1,6 +1,7 @@
 class Solution:
     def frequencySort(self, nums: List[int]) -> List[int]:
-        nums.sort(reverse=True)
+        nums.sort()
+        nums.reverse()
         arr = []
         x = {}
         for val in nums:
