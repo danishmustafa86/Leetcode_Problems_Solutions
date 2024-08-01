@@ -8,6 +8,18 @@ class Solution:
 
 
 
+        # hsh = {}
+        # for val in nums:
+        #     if val not in hsh:
+        #         hsh[val] = 1
+        #     else:
+        #         hsh[val] += 1
+        
+
+
+
+
+
 
 
 
