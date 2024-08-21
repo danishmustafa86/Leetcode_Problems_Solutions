@@ -14,10 +14,8 @@ class Solution:
         
         while q:
             minl += 1
-            curl = len(q)
-            for _ in range(curl):
+            for _ in range(len(q)):
                 node = q.popleft()
-                # Check if it's a leaf node
                 if not node.left and not node.right:
                     return minl
                 if node.left:
