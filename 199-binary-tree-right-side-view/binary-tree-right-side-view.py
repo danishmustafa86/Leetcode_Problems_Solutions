@@ -11,14 +11,16 @@ class Solution:
         q = deque([root])
         arr = []
         while q:
-            cur = []
-            for i in range(len(q)):
+            for i in range(len(q)-1):
                 node = q.popleft()
-                cur.append(node.val)
                 if node.left:
                     q.append(node.left)
                 if node.right:
                     q.append(node.right)
-            arr.append(cur[-1])
-
+            last = q.popleft()
+            arr.append(last.val)
+            if last.left:
+                   q.append(last.left)
+            if last.right:
+                q.append(last.right)
         return arr
