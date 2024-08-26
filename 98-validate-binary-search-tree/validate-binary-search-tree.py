@@ -3,31 +3,60 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
-        if not root:
-            return True
-
-        # Queue will store tuples of (node, lower_bound, upper_bound)
-        q = deque([(root, float('-inf'), float('inf'))])
-
-        while q:
-            node, low, high = q.popleft()
-            
-            # If the current node's value does not satisfy the BST properties, return False
-            if not (low < node.val < high):
+        def pre(mn, node, high):
+            if not node:
+                return True
+            if not (mn < node.val < high):
                 return False
+            # Check the left and right subtrees with updated bounds
+            return pre(mn, node.left, node.val) and pre(node.val, node.right, high)
 
-            # For the left child, update the upper bound to the current node's value
-            if node.left:
-                q.append((node.left, low, node.val))
+        return pre(float("-inf"), root, float("inf"))
 
-            # For the right child, update the lower bound to the current node's value
-            if node.right:
-                q.append((node.right, node.val, high))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        # if not root:
+        #     return True
+
+        # # Queue will store tuples of (node, lower_bound, upper_bound)
+        # q = deque([(root, float('-inf'), float('inf'))])
+
+        # while q:
+        #     node, low, high = q.popleft()
+            
+        #     # If the current node's value does not satisfy the BST properties, return False
+        #     if not (low < node.val < high):
+        #         return False
+
+        #     # For the left child, update the upper bound to the current node's value
+        #     if node.left:
+        #         q.append((node.left, low, node.val))
+
+        #     # For the right child, update the lower bound to the current node's value
+        #     if node.right:
+        #         q.append((node.right, node.val, high))
         
-        # If all nodes satisfy the BST properties, return True
-        return True
+        # # If all nodes satisfy the BST properties, return True
+        # return True
 
 
 
