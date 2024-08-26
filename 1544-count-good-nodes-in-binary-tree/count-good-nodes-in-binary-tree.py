@@ -7,16 +7,15 @@
 
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
-        def dfs(node,maxval):
-            if not node:
+        def dfs(root,maxval):
+            if not root:
                 return 0
-            res = 1 if node.val >= maxval else 0
-            maxval = max(maxval, node.val)
-            res += dfs(node.left, maxval)
-            res += dfs(node.right, maxval)
+            res = 1 if root.val >= maxval else 0
+            maxval = max(maxval, root.val)
+            res += dfs(root.left, maxval)
+            res += dfs(root.right, maxval)
             return res
-        return dfs(root, root.val)
-
+        return dfs(root,root.val)
 
 
 
