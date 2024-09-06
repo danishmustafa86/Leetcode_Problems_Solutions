@@ -5,15 +5,16 @@ class Solution:
 
         first = float("inf")
         second = float("inf")
+        
         for val in nums:
-            if val<= first:
+
+            if val <= first:
                 first = val
-            elif val<= second:
+            elif val <= second:
                 second = val
             else:
                 return True
         return False
-
 
 
 
