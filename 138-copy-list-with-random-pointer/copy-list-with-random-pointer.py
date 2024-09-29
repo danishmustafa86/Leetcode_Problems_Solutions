@@ -21,7 +21,8 @@ class Solution:
         while cur:
             if cur.next:
                 newNode[cur].next = newNode[cur.next]
-            if cur.random:
+            if cur.random:        
                 newNode[cur].random = newNode[cur.random]
             cur = cur.next
+
         return newNode[head]
