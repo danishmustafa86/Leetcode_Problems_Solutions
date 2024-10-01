@@ -24,14 +24,11 @@ class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
         stones.sort()
         while len(stones) > 1:
-            if stones[-1] == stones[-2]:
-                stones.pop()
-                stones.pop()
-            else:
-                v1  = stones.pop()
-                v2  = stones.pop()
+            v1  = stones.pop()
+            v2  = stones.pop()
+            if v1 > v2:
                 stones.append(v1 - v2)
-                stones.sort()
+            stones.sort()
         stones.append(0)
         return stones[0] 
 
