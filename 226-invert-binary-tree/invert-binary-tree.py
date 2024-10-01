@@ -13,6 +13,6 @@ class Solution:
                 return
 
             root.left, root.right = root.right, root.left
-            root = dfs(root.left),dfs(root.right)
+            dfs(root.left),dfs(root.right)
         dfs(root)
         return root
