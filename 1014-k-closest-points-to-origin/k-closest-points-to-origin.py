@@ -11,5 +11,5 @@ class Solution:
         for val in points:
             cur = val[0]**2 + val[1]**2
             heapq.heappush(heap, (cur,val))
-        result = [heapq.heappop(heap)[1] for val in range(k)]
+        result = [heapq.heappop(heap)[1] for _ in range(k)]
         return result
