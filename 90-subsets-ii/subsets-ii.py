@@ -11,6 +11,7 @@ class Solution:
                 # Append a copy of temp (as tuple) to avoid duplicate subsets
                 if temp not in res:
                     res.append(temp[:])
+                    print(temp[:])
                 return 
             
             # Include the current number in the subset
@@ -20,7 +21,7 @@ class Solution:
             # Backtrack and do not include the current number
             temp.pop()
             dfs(i + 1)
-
+        print(res)
         dfs(0)
         return res
 
