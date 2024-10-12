@@ -5,7 +5,7 @@ class Solution:
 
         def backtrack(i, temp, curSum):
             if curSum == target:
-                res.append(temp[::])
+                res.append(temp[:])
                 return 
             if i == len(candidates) or curSum > target:
                 return
