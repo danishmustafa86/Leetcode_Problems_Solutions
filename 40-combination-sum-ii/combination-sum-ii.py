@@ -9,10 +9,8 @@ class Solution:
                 return 
             if i == len(candidates) or curSum > target:
                 return
-            curSum += candidates[i]
             temp.append(candidates[i])
-            backtrack(i+1, temp, curSum)
-            curSum -= candidates[i]
+            backtrack(i+1, temp, curSum + candidates[i])
             temp.pop()
 
             while i+1 < len(candidates) and candidates[i] == candidates[i + 1]:
