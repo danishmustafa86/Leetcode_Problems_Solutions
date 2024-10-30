@@ -4,9 +4,9 @@ class Solution:
         Set = set()
         Ans = []
         for i in range(len(nums) -2) :
-            j = i + 1
-            k = len(nums) - 1
-            while j < k:
+            j = i + 1   // left pointer
+            k = len(nums) - 1  // right pointer
+            while j < k:   // from begining of j pointer to the end of nums which is k
                 total = nums[i] + nums[j] + nums[k]
                 if total == 0:
                     Set.add((nums[i], nums[j], nums[k]))
@@ -15,7 +15,7 @@ class Solution:
                     k -= 1
                 else:
                     j += 1
-        for i in Set:
+        for i in Set:   // for converting set to array to fulfill function return type requirements
             Ans.append(i)
         return Ans
 
