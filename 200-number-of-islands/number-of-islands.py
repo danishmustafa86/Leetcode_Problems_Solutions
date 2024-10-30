@@ -7,7 +7,7 @@ class Solution:
         visit, isIsland = set(), 0
 
         def dfs( r, c):
-            q = collections.deque()
+            q = deque()
             visit.add((r,c))
             q.append((r, c))
             while q:
