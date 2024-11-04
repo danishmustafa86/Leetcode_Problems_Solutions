@@ -11,7 +11,7 @@ class Solution:
             product *= nums[right]
 
             while product >= k and left <= right:
-                product //= nums[left]
+                product /= nums[left]
                 left += 1
             
             res += right - left + 1
