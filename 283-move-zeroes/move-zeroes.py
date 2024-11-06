@@ -6,6 +6,6 @@ class Solution:
                 left += 1
                 continue
             if nums[right] != 0:
-                nums[left], nums[right] = nums[right], nums[left]
+                nums[right], nums[left] = nums[left], nums[right]
                 left += 1
-        # return nums
+        return nums
