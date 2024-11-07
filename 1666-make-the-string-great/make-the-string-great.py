@@ -9,21 +9,3 @@ class Solution:
         return "".join(stk)
 
 
-
-
-
-
-
-
-
-
-
-
-
-        # stk = []
-        # for val in s:
-        #     if stk and stk[-1] != val and val.lower() == stk[-1].lower():
-        #         stk.pop()
-        #     else:
-        #         stk.append(val)
-        # return "".join(stk)
