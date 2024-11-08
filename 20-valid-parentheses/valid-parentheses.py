@@ -12,7 +12,7 @@ class Solution:
             else:
                 stack.append(i)
 
-        return not stack
+        return len(stack) == 0
 
 
 
