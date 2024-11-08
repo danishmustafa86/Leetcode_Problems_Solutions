@@ -1,53 +1,20 @@
 class Solution:
     def isValid(self, s: str) -> bool:
+        st = "([{"
+        end = ")]}"
         stack = []
-        hsh = {
-            ")":"(",
-            "]":"[",
-            "}":"{"
-        }
+
         for i in s:
-            if i in hsh:
-                if stack and stack[-1] == hsh[i]:
-                    stack.pop()
-                else:
-                    return False
-            else:
+            if i in st:
+                # If it's an opening bracket, push onto the stack
                 stack.append(i)
+            elif i in end:
+                # Check if stack is not empty and the last item matches the corresponding opening bracket
+                if not stack or stack[-1] != st[end.index(i)]:
+                    return False
+                else:
+                    # Pop the matching opening bracket
+                    stack.pop()
+
+        # Ensure stack is empty at the end, meaning all brackets were matched
         return len(stack) == 0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
-# class Solution:
-#     def isValid(self, s: str) -> bool:
-#         st1 = "([{"
-#         st2 = ")]}"
-#         stk = []
-#         match_brackets = { ")":"(", "]":"[", "}":"{"}
-#         for i in s:
-#             if i in st1:
-#                 stk.append(i)
-#             elif i in st2:
-#                 if not stk or stk[-1] != match_brackets[i]:
-#                     return False
-#                 stk.pop()
-#         return len(stk) == 0
-                    
