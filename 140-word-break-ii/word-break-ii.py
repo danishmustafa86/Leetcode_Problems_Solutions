@@ -14,8 +14,8 @@ class Solution:
                 if w not in wordDict:
                     continue
                 string = backtrack(j+1)
-                # if not string:
-                #     continue
+                if not string:
+                    continue
                 for substr in string:
                     sentence = w
                     if substr:
