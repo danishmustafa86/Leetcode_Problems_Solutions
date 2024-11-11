@@ -2,9 +2,10 @@ class Solution:
     def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
         i = 0
         stack = []
-        for n in pushed:
-            stack.append(n)
-            while stack and i < len(pushed) and stack[-1] == popped[i]:
+        for s in pushed:
+            stack.append(s)
+            while i < len(pushed) and stack and popped[i] == stack[-1]:
                 stack.pop()
                 i += 1
-        return not stack
+        
+        return len(stack) == 0
