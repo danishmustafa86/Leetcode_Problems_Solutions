@@ -7,19 +7,117 @@ class Solution:
     def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         if not head or not head.next or k == 0:
             return head
+        arr = []
+        cur  = head
+        while cur:
+            arr.append(cur.val)
+            cur = cur.next
+        k = k % len(arr)
+        if k == 0:
+            return head
+        arr = arr[-k:] + arr[:-k]
 
-        lenght = 1
-        old_tail = head
-        while old_tail.next:
-            old_tail = old_tail.next
-            lenght += 1
+        dummy = ListNode()
+        temp = dummy
+        for val in arr:
+            temp.next = ListNode(val)
+            temp = temp.next
+        return dummy.next
 
-        old_tail.next = head
 
-        k = k%lenght
-        new_tail = head
-        for _ in range(lenght - k - 1):
-            new_tail = new_tail.next
-        new_head = new_tail.next
-        new_tail.next = None
-        return new_head
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
