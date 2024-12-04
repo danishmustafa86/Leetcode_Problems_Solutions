@@ -12,14 +12,52 @@ class Solution:
         while q:
             level = []
             for i in range(len(q)):
-                node  = q.popleft()
-                if node:
-                    level.append(node.val)
-                    q.append(node.left)
-                    q.append(node.right)
+                cur = q.popleft()
+                if cur:
+                    level.append(cur.val)
+                    q.append(cur.left)
+                    q.append(cur.right)
             if level:
                 res.append(level)
+        
         return res
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        # res = []
+        # q = deque()
+        # q.append(root)
+        # while q:
+        #     level = []
+        #     for i in range(len(q)):
+        #         node  = q.popleft()
+        #         if node:
+        #             level.append(node.val)
+        #             q.append(node.left)
+        #             q.append(node.right)
+        #     if level:
+        #         res.append(level)
+        # return res
 
 
 
