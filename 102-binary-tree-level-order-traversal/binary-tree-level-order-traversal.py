@@ -7,7 +7,7 @@
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         res = []
-        q = collections.deque()
+        q = deque()
         q.append(root)
         while q:
             level = []
