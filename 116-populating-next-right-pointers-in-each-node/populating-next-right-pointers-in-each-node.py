@@ -14,20 +14,41 @@ class Solution:
             return None
         q = deque([root])
         while q:
-            dq = deque()
+            innerQ = deque()
             for i in range(len(q)):
-                node = q.popleft()
-                dq.append(node)
-                if node.left:
-                    q.append(node.left)
-                if node.right:
-                    q.append(node.right)
-            while len(dq)>1:
-                cur  = dq.popleft()
-                cur.next = dq[0]
-            cur = dq.popleft()
+                cur = q.popleft()
+                innerQ.append(cur)
+                if cur.left:
+                    q.append(cur.left)
+                if cur.right:
+                    q.append(cur.right)
+            while len(innerQ) > 1:
+                cur = innerQ.popleft()
+                cur.next = innerQ[0]
+            cur = innerQ.popleft()
             cur.next = None
         return root
+
+
+
+        # if not root:
+        #     return None
+        # q = deque([root])
+        # while q:
+        #     dq = deque()
+        #     for i in range(len(q)):
+        #         node = q.popleft()
+        #         dq.append(node)
+        #         if node.left:
+        #             q.append(node.left)
+        #         if node.right:
+        #             q.append(node.right)
+        #     while len(dq)>1:
+        #         cur  = dq.popleft()
+        #         cur.next = dq[0]
+        #     cur = dq.popleft()
+        #     cur.next = None
+        # return root
 
 
 
