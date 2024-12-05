@@ -6,23 +6,22 @@
 #         self.right = right
 class Solution:
     def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        if not root:
-            return []
-        q = deque([root])
-        zigzag = []
-        level = 0
+        res = []
+        q = deque()
+        q.append(root)
+        n = 0
         while q:
-            cur = []
-            level += 1
+            level = []
+            n += 1
             for i in range(len(q)):
-                node = q.popleft()
-                cur.append(node.val)
-                if node.left:
-                    q.append(node.left)
-                if node.right:
-                    q.append(node.right)
-            if level%2 == 0:
-                zigzag.append(cur[::-1])
-            else:
-                zigzag.append(cur)
-        return zigzag
+                cur = q.popleft()
+                if cur:
+                    q.append(cur.left)
+                    q.append(cur.right)
+                    level.append(cur.val)
+            if  level and n % 2 == 0:
+                level.reverse()
+                res.append(level)
+            elif level:
+                res.append(level)
+        return res
