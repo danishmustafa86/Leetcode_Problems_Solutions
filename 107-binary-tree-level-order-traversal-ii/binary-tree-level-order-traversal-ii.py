@@ -19,7 +19,8 @@ class Solution:
                     level.append(cur.val)
             if level:
                 res.append(level)
-        ans = []
-        for i in range(len(res) - 1, -1, -1):
-            ans.append(res[i])
-        return ans
+        # ans = []
+        # for i in range(len(res) - 1, -1, -1):
+        #     ans.append(res[i])
+        cur = res.reverse()
+        return res
