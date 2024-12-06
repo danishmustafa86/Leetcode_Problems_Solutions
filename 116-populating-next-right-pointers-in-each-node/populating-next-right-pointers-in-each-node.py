@@ -18,6 +18,7 @@ class Solution:
             q2 = deque()
             for i in range(len(q)):
                 cur = q.popleft()
+                print(cur)
                 q2.append(cur)
                 if cur.left:
                     q.append(cur.left)
