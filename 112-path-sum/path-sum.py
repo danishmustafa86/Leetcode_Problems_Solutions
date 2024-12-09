@@ -14,10 +14,73 @@ class Solution:
                 return False
             Sum += root.val
             if not root.left and not root.right:
-                return targetSum == Sum
-            return traverse(root.left, Sum) or traverse( root.right, Sum)
+                return Sum == targetSum
+
+            return traverse(root.left, Sum) or traverse(root.right, Sum)
 
         return traverse(root, 0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        # if not root:
+        #     return False
+        
+        # def traverse(root, Sum):
+        #     if not root:
+        #         return False
+        #     Sum += root.val
+        #     if not root.left and not root.right:
+        #         return targetSum == Sum
+        #     return traverse(root.left, Sum) or traverse( root.right, Sum)
+
+        # return traverse(root, 0)
 
 
 
