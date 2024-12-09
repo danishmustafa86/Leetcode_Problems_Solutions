@@ -8,14 +8,16 @@ class Solution:
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
         if not root:
             return False
-        def traverse(root, curSum):
+        
+        def traverse(root, Sum):
             if not root:
                 return False
-            curSum += root.val
+            Sum += root.val
             if not root.left and not root.right:
-                return curSum == targetSum
-            return traverse(root.left, curSum) or traverse(root.right, curSum)
-        return traverse(root,0)
+                return targetSum == Sum
+            return traverse(root.left, Sum) or traverse( root.right, Sum)
+
+        return traverse(root, 0)
 
 
 
