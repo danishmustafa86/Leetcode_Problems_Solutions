@@ -6,9 +6,17 @@ class Solution:
         #         nums[k] = nums[i]
         #         k += 1
         # return k
+        # k = 0
+        # for i in range(len(nums)):
+        #     if nums[i] != val:
+        #         nums[k] = nums[i]
+        #         k += 1
+        # return k
+
+
         k = 0
         for i in range(len(nums)):
-            if nums[i] != val:
+            if val != nums[i]:
                 nums[k] = nums[i]
                 k += 1
         return k
