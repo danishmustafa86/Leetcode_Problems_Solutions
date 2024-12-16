@@ -10,6 +10,9 @@ class Solution:
                 left += 1
         return nums
 
+
+        
+
         # left = 0
         # for right in range(len(nums)):
         #     if nums[left] != 0:
