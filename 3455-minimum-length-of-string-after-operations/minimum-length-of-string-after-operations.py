@@ -4,11 +4,8 @@ class Solution:
         n = 0
         for val in count.values():
             print(val)
-            if val > 2:
-                if val % 2 == 0:
-                    n += 2
-                else:
-                    n += 1
+            if val % 2 == 0:
+                n += 2
             else:
-                n += val
+                n += 1
         return n
