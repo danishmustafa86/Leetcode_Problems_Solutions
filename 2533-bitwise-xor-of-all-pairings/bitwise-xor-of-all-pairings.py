@@ -3,13 +3,13 @@ class Solution:
         result = 0
 
         # XOR all elements of nums1 `len(nums2)` times
-        for num in nums1:
-            if len(nums2) % 2 == 1:  # Contributes only if nums2's length is odd
+        if len(nums2) % 2 == 1:  # Contributes only if nums2's length is odd
+            for num in nums1:
                 result ^= num
 
         # XOR all elements of nums2 `len(nums1)` times
-        for num in nums2:
-            if len(nums1) % 2 == 1:  # Contributes only if nums1's length is odd
+        if len(nums1) % 2 == 1:  # Contributes only if nums1's length is odd
+            for num in nums2:
                 result ^= num
 
         return result
