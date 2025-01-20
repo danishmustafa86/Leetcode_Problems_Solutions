@@ -11,6 +11,6 @@ class Solution:
                     return False
                 row_set.add(matrix[i][j])
                 col_set.add(matrix[j][i])
-        # if row_set != set(range(1,n+1)) or col_set != set(range(1,n+1)):
-        #     return False
+        if row_set != set(range(1,n+1)) or col_set != set(range(1,n+1)):
+            return False
         return True
