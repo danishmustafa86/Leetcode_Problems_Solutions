@@ -15,7 +15,6 @@ class Solution:
             i, j = hsh[num]
             row_count[i] += 1
             col_count[j] += 1
-            
             if row_count[i] == m or col_count[j] == n:  # Fixed condition
                 return idx  # Fixed to return the index in `arr`
 
