@@ -1,6 +1,6 @@
 class Solution:
     def check(self, nums: List[int]) -> bool:
-        if len(nums) == 2:
+        if len(nums) < 2:
             return True
         for i in range(len(nums)):
             isSorted = True
