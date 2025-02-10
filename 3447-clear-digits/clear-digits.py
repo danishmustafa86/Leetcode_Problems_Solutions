@@ -1,18 +1,12 @@
 class Solution:
-    def is_integer(self, s):  # Add self as the first parameter
-        try:
-            int(s)
-            return True
-        except ValueError:
-            return False
-
     def clearDigits(self, s: str) -> str:
-        arr = []
+        stack = []
+        lower_letters = [ chr(i) for i in range(ord('a'), ord("z") + 1)]
         for i in range(len(s)):
-            if self.is_integer(s[i]):  # Use self to call the is_integer method
-                if arr:
-                    arr.pop()
+            if s[i] not in lower_letters:
+                stack.pop()
             else:
-                arr.append(s[i])
-        print("array is", arr)
-        return "".join(arr)
+                stack.append(s[i])
+        return "".join(stack)
+
+
