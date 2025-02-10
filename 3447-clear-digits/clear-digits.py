@@ -1,12 +1,11 @@
 class Solution:
     def clearDigits(self, s: str) -> str:
         stack = []
-        lower_letters = [ chr(i) for i in range(ord('a'), ord("z") + 1)]
         for i in range(len(s)):
-            if s[i] not in lower_letters:
-                stack.pop()
-            else:
+            if s[i].isalpha():
                 stack.append(s[i])
+            else:
+                stack.pop()
         return "".join(stack)
 
 
