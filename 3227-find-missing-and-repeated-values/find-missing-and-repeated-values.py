@@ -13,6 +13,7 @@ class Solution:
         while n <= len(grid) * len(grid):
             if n not in hsh:
                 ans.append(n)
+                break
             n += 1
 
 
