@@ -1,15 +1,13 @@
 class Solution:
     def subsets(self, nums):
-        res = []
-        subset = []
-        def dfs(i):
+        ans = []
+        def dfs( i, res):
             if i >= len(nums):
-                res.append(subset.copy())
+                ans.append(res[:])
                 return
-            subset.append(nums[i])
-            dfs(i+1)
-            subset.pop()
-            dfs(i+1)
-
-        dfs(0)
-        return res
+            dfs( i+1, res)
+            res.append(nums[i])
+            dfs( i+1, res)
+            res.pop()
+        dfs(0, [])
+        return ans
