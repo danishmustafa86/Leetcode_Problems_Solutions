@@ -1,5 +1,43 @@
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
+
+        # arr  = []
+        # def fun(i,res):
+        #     if len(res) == k and res not in arr:
+        #         arr.append(res[:])
+        #         return
+        #     if i > n:
+        #         return
+        #     res.append(i)
+        #     fun(i+1, res)
+        #     res.pop()
+        #     fun(i+1,res)
+
+        # fun(1, [])
+        # return arr
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         resArr = []
         cur = []
         def dfs(i):
