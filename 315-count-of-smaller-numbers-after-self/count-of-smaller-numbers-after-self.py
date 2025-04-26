@@ -2,44 +2,44 @@ from typing import List
 
 class Solution:
     def countSmaller(self, nums: List[int]) -> List[int]:
-        n = len(nums)
-        counts = [0] * n
-        pairs = list(enumerate(nums))  # (index, value)
-        
-        def merge_sort(start, end):
-            if end - start <= 1:
-                return pairs[start:end]
-            
-            mid = (start + end) // 2
-            left = merge_sort(start, mid)
-            right = merge_sort(mid, end)
-            merged = []
-            i = j = 0
-            right_count = 0
-            
-            while i < len(left) and j < len(right):
-                if left[i][1] > right[j][1]:
-                    # right[j] is smaller, so it's a smaller number to the right of left[i]
-                    merged.append(right[j])
-                    right_count += 1
-                    j += 1
-                else:
-                    counts[left[i][0]] += right_count
-                    merged.append(left[i])
-                    i += 1
-                    
-            # Remaining left items
-            while i < len(left):
-                counts[left[i][0]] += right_count
-                merged.append(left[i])
-                i += 1
-            # Remaining right items
-            while j < len(right):
-                merged.append(right[j])
-                j += 1
+        counts = [0] * len(nums)
+        indexed_nums = list(enumerate(nums))  # (original_index, value)
 
-            pairs[start:end] = merged
-            return merged
-        
-        merge_sort(0, n)
+        def count(arr, low, mid, high):
+            temp = []
+            right_counter = 0
+            left = low
+            right = mid + 1
+
+            while left <= mid and right <= high:
+                if arr[left][1] <= arr[right][1]:
+                    counts[arr[left][0]] += right_counter
+                    temp.append(arr[left])
+                    left += 1
+                else:
+                    right_counter += 1
+                    temp.append(arr[right])
+                    right += 1
+
+            while left <= mid:
+                counts[arr[left][0]] += right_counter
+                temp.append(arr[left])
+                left += 1
+
+            while right <= high:
+                temp.append(arr[right])
+                right += 1
+
+            for i in range(low, high + 1):
+                arr[i] = temp[i - low]
+
+        def ms(arr, low, high):
+            if low >= high:
+                return
+            mid = (low + high) // 2
+            ms(arr, low, mid)
+            ms(arr, mid + 1, high)
+            count(arr, low, mid, high)
+
+        ms(indexed_nums, 0, len(nums) - 1)
         return counts
