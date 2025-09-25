@@ -1,18 +1,36 @@
 // function maxProfit(prices: number[]): number {
-//     let arr:number[]=[]
+//     let maxprofit:number=0
 //         for(let i:number=0;i<prices.length;i++){
-            
-//             if(prices[i]<prices[i+1])  {  
-//                 for(let j:number=i+1;j<prices.length;j++){
-//                     arr.push(prices[j]-prices[i])
-//     }
-//                 return Math.max(...arr);
+//             for(let j:number=i+1;j<prices.length;j++){
+//             if(prices[i]<prices[j])  {  
+//                 let profit=prices[j]-prices[i]
+//                 if(profit>maxprofit){
+//                     maxprofit =profit
+//                 }
+//                 }
+                
 //             }
 //     }
 
-//     return 0
+//     return maxprofit
 // }
 
+// function maxProfit(prices: number[]): number {
+//     let maxProfit: number = 0;
+
+//     for (let i: number = 0; i < prices.length; i++) {
+//         for (let j: number = i + 1; j < prices.length; j++) {
+//             if (prices[i] < prices[j]) {
+//                 let profit = prices[j] - prices[i];
+//                 if (profit > maxProfit) {
+//                     maxProfit = profit; // Update the maximum profit if selling on this day yields a higher profit
+//                 }
+//             }
+//         }
+//     }
+
+//     return maxProfit;
+// }
 
 
 

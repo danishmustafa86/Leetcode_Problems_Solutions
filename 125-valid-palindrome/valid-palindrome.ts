@@ -9,12 +9,8 @@ function isPalindrome(s: string): boolean {
             str += s[i];
         }
     }
-    console.log(str);
     str = str.toLowerCase(); // Corrected line
-
-    console.log(str);
     let reversedStr: string = str.split("").reverse().join("");
-    console.log(reversedStr);
     if (reversedStr === str) {
         return true;
     } else {
