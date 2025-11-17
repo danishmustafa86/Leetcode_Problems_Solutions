@@ -1,1 +1,1 @@
-# Leetcode_Solutions
+# All Data Structures Leetcode_Solutions
