@@ -4,13 +4,13 @@ class Solution:
         left = 0
         right =len(nums) 
 
-        while left < right:
-            mid = (left + right) // 2
+        while left < right:                   
+            mid = (left + right) // 2           #    mid = 26
             if target > nums[mid]:
                 left = mid + 1
             else:
                 right = mid
-        return left
+        return right
 
 
 
